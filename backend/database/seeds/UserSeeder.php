@@ -16,11 +16,11 @@ class UserSeeder extends Seeder
         DB::table('profiles')->insert(['description' => 'Cliente','level' => null]);
         DB::table('profiles')->insert(['description' => 'Admin','level' => 1]);
         DB::table('users')->insert([
-                'nome' => 'Usuario Admin',
-                'perfil_id' => 2,
+                'name' => 'Usuario Admin',
+                'profile_id' => 2,
                 'email' => 'admin@email.com',
                 'email_verified_at' => now(),
-                'senha' => bcrypt('12345678'), 
+                'password' => bcrypt('12345678'), 
                 'remember_token' => Str::random(10),
                 ]);
     }
