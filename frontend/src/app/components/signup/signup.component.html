@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <h5 class="card-header text-white bg-primary mb-3"> Nova Conta</h5>
+            <div class="card-body">
+                <form #signupForm=ngForm (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label for="inputName" class="col-md-4 col-form-label text-md-right">Nome </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="name" id="inputName" [(ngModel)]="form.name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail" class="col-md-4 col-form-label text-md-right">Email </label>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelp" [(ngModel)]="form.email" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.email }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-md-4 col-form-label text-md-right">Senha </label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="password" id="inputPassword"  [(ngModel)]="form.password" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.password }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPasswordConfirm" class="col-md-4 col-form-label text-md-right">Confirmar Senha </label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="password_confirmation" id="inputPasswordConfirm"  [(ngModel)]="form.password_confirmation" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-10 offset-md-5">
+                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!signupForm.valid">Criar Conta</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

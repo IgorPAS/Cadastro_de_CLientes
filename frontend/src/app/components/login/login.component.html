@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <h5 class="card-header text-white bg-primary mb-3">Login</h5>
+            <div class="card-body">
+                <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+                    <div class="alert alert-danger text-center" role="alert" [hidden]="!error">{{error}}</div>
+                    <div class="alert alert-success text-center" role="alert" [hidden]="!data">{{data}}</div>
+                    <div class="form-group row">
+                        <label for="inputemail" class="col-md-4 col-form-label text-md-right">Email </label>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" id="inputemail" aria-describedby="emailHelp" [(ngModel)]="form.email" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputpassword" class="col-md-4 col-form-label text-md-right">Senha </label>
+                        <div class="col-md-6">
+                            <input type="password" class="form-control" name="password" id="inputpassword"  [(ngModel)]="form.password" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Entrar</button>
+                            <a class="btn btn-success float-right" routerLink="/signup">Criar Conta</a>
+                        </div>
+                        <div class="col-md-6 offset-md-4">
+                            <a class="badge badge-info" routerLink="/request-reset-password">Esqueci minha senha</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

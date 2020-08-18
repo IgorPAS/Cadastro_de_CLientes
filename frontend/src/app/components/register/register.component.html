@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <h5 class="card-header text-white bg-primary mb-3"> Cadastro</h5>
+            <div class="card-body">
+                <form #registerForm=ngForm (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                         
+                        <label for="inputStreet" class="col-md-4 col-form-label text-md-right">Rua </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="street" id="inputStreet" [(ngModel)]="form.street" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.street }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputNumber" class="col-md-4 col-form-label text-md-right">Numero </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="number" id="inputNumber" [(ngModel)]="form.number" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.number }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputComplement" class="col-md-4 col-form-label text-md-right">Complemento </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="complement" id="inputComplement"  [(ngModel)]="form.complement" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.complement }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputZipcode" class="col-md-4 col-form-label text-md-right">Cep </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="zipcode" id="inputZipcode"  [(ngModel)]="form.zipcode" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.zipcode }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputNeighborhood" class="col-md-4 col-form-label text-md-right">Bairro </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="neighborhood" id="inputNeighborhood"  [(ngModel)]="form.neighborhood" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.neighborhood }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCity" class="col-md-4 col-form-label text-md-right">Cidade </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="neighborhood" id="inputCity"  [(ngModel)]="form.city" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.city }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputUf" class="col-md-4 col-form-label text-md-right">UF </label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="uf" id="inputUf"  [(ngModel)]="form.uf" required>
+                            <div *ngIf="errors" class="alert alert-danger"> 
+                                {{ errors.uf }} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-10 offset-md-5">
+                            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!registerForm.valid">Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

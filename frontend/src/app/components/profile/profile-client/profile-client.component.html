@@ -1,0 +1,22 @@
+<h1>Cliente</h1>
+<div class="alert alert-success text-center" role="alert" [hidden]="!data">{{data}}</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of user">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.profile}}</td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-primary"  routerLink="/register">Completar Cadastro</a>

@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <h5 class="card-header text-white bg-primary mb-3">Recuperar Senha</h5>
+            <div class="card-body">
+                <form #requestResetForm=ngForm (ngSubmit)="onSubmit()">
+                    <div class="alert alert-danger text-center" role="alert" [hidden]="!error">{{error}}</div>
+                    <div class="alert alert-success text-center" role="alert" [hidden]="!data">{{data}}</div>
+                    <div class="form-group row">
+                        <div class="col-md-8 offset-md-2">
+                            <input type="email" class="form-control" placeholder="Digite seu Email para redefinir a senha" name="email" id="inputemail" aria-describedby="emailHelp" [(ngModel)]="form.email" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-2">
+                            <button type="submit" class="btn btn-primary" [disabled]="!requestResetForm.valid">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

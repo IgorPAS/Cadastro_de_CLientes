@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <div>
+        <a class="navbar-brand" routerLink="login" *ngIf="!logged" >Entrar </a>
+        <a class="navbar-brand"  href="/" (click)="logout($event)" *ngIf="logged" >Sair </a>
+        <a class="navbar-brand" routerLink="signup" *ngIf="!logged" >Criar Conta </a>
+        <a class="navbar-brand" href="/" (click)="profile($event)" *ngIf="logged" >Perfil </a>
+    </div>
+    
+</nav>
